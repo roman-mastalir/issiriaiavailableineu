@@ -45,7 +45,12 @@ Flip `answer` to `"Yes"` and the colour (red → green), footnote, source link, 
 
 ## Analytics
 
-A [Plausible](https://plausible.io) tag (cookieless, no consent banner) is included for `issiriaiavailableineu.com`. Add the site in your Plausible dashboard to start collecting — until then the tag is a harmless no-op. Remove the script line in `index.html` if you don't want it.
+[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) — free, cookieless, no consent banner needed (so the "collects no personal data" line stays true). Two ways to turn it on:
+
+- **Easiest (zero code):** in the Cloudflare Pages project → **Metrics → Web Analytics → Enable**. Cloudflare auto-injects the beacon. If you do this, delete the `beacon.min.js` `<script>` in `index.html` so visits aren't counted twice.
+- **Manual:** Cloudflare dashboard → **Analytics & Logs → Web Analytics → Add a site**, copy the token it gives you, and paste it into the `data-cf-beacon` token placeholder in `index.html`.
+
+View the numbers anytime under Web Analytics in the Cloudflare dashboard.
 
 ## Regenerating the OG image / icons
 
