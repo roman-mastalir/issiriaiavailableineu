@@ -15,6 +15,7 @@ Static, zero-build, edge-hosted on Cloudflare Pages. Optimized for social sharin
 | `og-image.html` | Source template for the OG image (re-render after design changes) |
 | `favicon.svg` / `apple-touch-icon.png` | Simple "NO" mark |
 | `_headers` | Cloudflare Pages cache rules |
+| `_redirects` | Cloudflare Pages rule: `www` → apex |
 
 ## The single source of truth
 
@@ -40,7 +41,7 @@ Flip `answer` to `"Yes"` and the colour (red → green), footnote, source link, 
    - **Build command:** *(leave empty)*
    - **Build output directory:** `/`
 4. **Save and Deploy.** You get a `*.pages.dev` URL in ~30s.
-5. **Custom domains → Set up a custom domain →** `issiriaiavailableineu.com` (the domain is already on Cloudflare, so DNS is automatic).
+5. **Custom domains → Set up a custom domain →** add **both** `issiriaiavailableineu.com` and `www.issiriaiavailableineu.com` (the domain is already on Cloudflare, so DNS is automatic). The `_redirects` file then sends `www` → apex.
 6. Validate the social unfurl with [opengraph.xyz](https://www.opengraph.xyz/) before sharing widely.
 
 ## Analytics

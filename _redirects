@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects.
+# Send the www subdomain to the bare apex domain (the canonical URL used in
+# the page's meta tags), preserving any path via :splat. 301 = permanent.
+#
+# Prerequisite: add `www.issiriaiavailableineu.com` as a custom domain on the
+# Pages project too (Custom domains → Set up a custom domain). The request has
+# to reach Pages for this rule to fire — otherwise www just won't resolve.
+https://www.issiriaiavailableineu.com/* https://issiriaiavailableineu.com/:splat 301
