@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Source template for og-image.png. Render at 1200x630 with headless Chrome:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+       --headless --disable-gpu --force-device-scale-factor=1 \
+       --window-size=1200,630 --default-background-color=00000000 \
+       --screenshot=og-image.png "$(pwd)/og-image.html"
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #ffffff;
+    color: #1d1d1f;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  .question {
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .answer {
+    font-size: 400px;
+    line-height: 0.86;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #ff3b30;
+  }
+  .footnote {
+    font-size: 30px;
+    font-weight: 500;
+    color: #6e6e73;
+    margin-top: 14px;
+    max-width: 920px;
+  }
+  .brand {
+    position: absolute;
+    bottom: 38px;
+    right: 48px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #86868b;
+  }
+  .brand b { color: #1d1d1f; }
+</style>
+</head>
+<body>
+  <div class="question">Is Siri AI Available in EU?</div>
+  <div class="answer">NO</div>
+  <div class="footnote">Apple is blocking Siri AI in the EU over the Digital Markets Act.</div>
+  <div class="brand">Made by <b>Eventee</b></div>
+</body>
+</html>

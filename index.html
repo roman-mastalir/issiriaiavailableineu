@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Is Siri AI Available in EU? — No.</title>
+  <meta name="description" content="As of WWDC 2026, Apple is blocking Siri AI in the EU on iPhone and iPad over the Digital Markets Act. (Mac, Watch, and Vision Pro are fine.)" />
+  <link rel="canonical" href="https://issiriaiavailableineu.com/" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Theme color reacts to light/dark -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://issiriaiavailableineu.com/" />
+  <meta property="og:title" content="Is Siri AI Available in EU? — No." />
+  <meta property="og:description" content="As of WWDC 2026, Apple is blocking Siri AI in the EU on iPhone and iPad over the Digital Markets Act. (Mac, Watch, and Vision Pro are fine.)" />
+  <meta property="og:image" content="https://issiriaiavailableineu.com/og-image.png?v=1" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Is Siri AI Available in EU? A giant NO." />
+  <meta property="og:site_name" content="IsSiriAIAvailableInEU.com" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Is Siri AI Available in EU? — No." />
+  <meta name="twitter:description" content="As of WWDC 2026, Apple is blocking Siri AI in the EU on iPhone and iPad over the Digital Markets Act. (Mac, Watch, and Vision Pro are fine.)" />
+  <meta name="twitter:image" content="https://issiriaiavailableineu.com/og-image.png?v=1" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --hairline: rgba(0, 0, 0, 0.12);
+      --no: #ff3b30;   /* Apple-ish strong red */
+      --yes: #34c759;  /* Apple-ish green, for the contingency flip */
+      --link: #0066cc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --fg: #f5f5f7;
+        --muted: #98989d;
+        --hairline: rgba(255, 255, 255, 0.16);
+        --no: #ff453a;
+        --yes: #30d158;
+        --link: #2997ff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+    }
+
+    main {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: max(20px, env(safe-area-inset-top)) 20px 24px;
+      gap: clamp(8px, 2.5vh, 22px);
+    }
+
+    .question {
+      margin: 0;
+      font-size: clamp(1.25rem, 5.2vw, 2rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+    }
+
+    .answer {
+      margin: 0;
+      font-size: clamp(7rem, 42vw, 18rem);
+      line-height: 0.9;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--no);
+      transform: translateZ(0);
+      animation: pop 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) both;
+    }
+    .answer[data-answer="yes"] { color: var(--yes); }
+
+    @keyframes pop {
+      0%   { transform: scale(0.82); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .answer { animation: none; }
+    }
+
+    .footnote {
+      margin: 0;
+      max-width: 30ch;
+      font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    .context {
+      margin: 0;
+      max-width: 42ch;
+      font-size: clamp(0.82rem, 3vw, 0.98rem);
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .context a { color: var(--link); text-decoration: none; }
+    .context a:hover { text-decoration: underline; }
+
+    .counter {
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+      font-size: clamp(0.78rem, 2.8vw, 0.92rem);
+      color: var(--muted);
+      min-height: 1.2em;
+    }
+    .counter b { font-weight: 600; color: var(--fg); }
+
+    .share {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--hairline);
+      background: transparent;
+      color: var(--fg);
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 11px 18px;
+      border-radius: 980px;
+      cursor: pointer;
+      text-decoration: none;
+      line-height: 1;
+      transition: background 0.15s ease, transform 0.05s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+    .btn:active { transform: scale(0.97); }
+    .btn--primary {
+      background: var(--fg);
+      color: var(--bg);
+      border-color: var(--fg);
+    }
+    .btn--primary:hover { background: color-mix(in srgb, var(--fg) 88%, var(--bg)); }
+
+    footer {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 18px 20px max(18px, env(safe-area-inset-bottom));
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    footer a { color: var(--link); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .made a { font-weight: 600; color: var(--fg); }
+    .gag { max-width: 52ch; margin: 0 auto; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(20px + env(safe-area-inset-bottom));
+      transform: translateX(-50%) translateY(20px);
+      background: var(--fg);
+      color: var(--bg);
+      padding: 10px 16px;
+      border-radius: 980px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 10;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="question">Is Siri AI Available in EU?</h1>
+    <!-- Hardcoded for instant first paint + no-JS robustness; JS re-renders from STATUS below. -->
+    <p class="answer" id="answer" data-answer="no">NO</p>
+    <p class="footnote" id="footnote">Well, not on your iPhone or iPad. Mac, Watch, and Vision Pro are fine.</p>
+    <p class="context">
+      As of WWDC 2026, Apple is blocking Siri AI in the EU over the
+      <a id="source" href="https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/" target="_blank" rel="noopener">Digital Markets Act</a>.
+    </p>
+    <p class="counter" id="counter"></p>
+
+    <div class="share">
+      <button class="btn btn--primary" id="shareBtn" type="button">Share</button>
+      <a class="btn" id="xBtn" href="#" target="_blank" rel="noopener">Post on X</a>
+    </div>
+  </main>
+
+  <footer>
+    <p class="made">Made by <a href="https://eventee.com/?utm_source=issiriaiavailableineu&utm_medium=referral&utm_campaign=siri-ai-eu" target="_blank" rel="noopener">Eventee</a></p>
+    <p class="gag">This site collects no personal data, needs no Trusted System Agent, and works perfectly fine in the EU.</p>
+    <p><a id="sourceFooter" href="https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/" target="_blank" rel="noopener">Source: Apple Newsroom</a></p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Link copied</div>
+
+  <script>
+    /* ───────────────────────────────────────────────────────────
+       SINGLE SOURCE OF TRUTH.
+       To flip the verdict if Apple ever ships Siri AI to the EU,
+       change `answer` to "Yes" (and the fallback <p class="answer">
+       text above so the no-JS view matches). Everything else —
+       colour, footnote, source link, and the live counter — follows.
+       ─────────────────────────────────────────────────────────── */
+    const STATUS = {
+      answer: "No",            // change to "Yes" if Apple ships Siri AI to the EU
+      footnote: "Well, not on your iPhone or iPad. Mac, Watch, and Vision Pro are fine.",
+      since: "2026-06-08T17:00:00Z",
+      sourceUrl: "https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/"
+    };
+
+    const SHARE_TEXT = "Is Siri AI available in the EU? " + STATUS.answer + ".";
+    const PAGE_URL = "https://issiriaiavailableineu.com";
+
+    // Render the verdict from STATUS.
+    (function render() {
+      const isYes = STATUS.answer.trim().toLowerCase().startsWith("y");
+      const answerEl = document.getElementById("answer");
+      answerEl.textContent = STATUS.answer.toUpperCase();
+      answerEl.dataset.answer = isYes ? "yes" : "no";
+
+      document.getElementById("footnote").textContent = STATUS.footnote;
+      document.getElementById("source").href = STATUS.sourceUrl;
+      document.getElementById("sourceFooter").href = STATUS.sourceUrl;
+
+      document.getElementById("xBtn").href =
+        "https://twitter.com/intent/tweet?text=" +
+        encodeURIComponent(SHARE_TEXT) + "&url=" + encodeURIComponent(PAGE_URL);
+    })();
+
+    // Live "since Apple said no" counter.
+    (function counter() {
+      const el = document.getElementById("counter");
+      const since = new Date(STATUS.since).getTime();
+      const verb = STATUS.answer.trim().toLowerCase().startsWith("y") ? "said yes" : "said no";
+      function tick() {
+        const diff = Date.now() - since;
+        if (diff < 0) { el.textContent = ""; return; }
+        const totalHours = Math.floor(diff / 3600000);
+        const days = Math.floor(totalHours / 24);
+        const hours = totalHours % 24;
+        const d = days === 1 ? "1 day" : days + " days";
+        const h = hours === 1 ? "1 hour" : hours + " hours";
+        el.innerHTML = "It has been <b>" + d + ", " + h + "</b> since Apple " + verb + ".";
+      }
+      tick();
+      setInterval(tick, 30000);
+    })();
+
+    // Share affordance: native share on mobile, copy-link fallback on desktop.
+    (function share() {
+      const btn = document.getElementById("shareBtn");
+      const toast = document.getElementById("toast");
+      let toastTimer;
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+      }
+      async function copyLink() {
+        try {
+          await navigator.clipboard.writeText(PAGE_URL);
+          showToast("Link copied");
+        } catch (e) {
+          showToast(PAGE_URL);
+        }
+      }
+      btn.addEventListener("click", async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, text: SHARE_TEXT, url: PAGE_URL });
+            return;
+          } catch (e) {
+            if (e && e.name === "AbortError") return; // user cancelled
+          }
+        }
+        copyLink();
+      });
+    })();
+  </script>
+
+  <!-- Plausible: cookieless, no consent banner. Register the domain at plausible.io to collect stats. -->
+  <script defer data-domain="issiriaiavailableineu.com" src="https://plausible.io/js/script.js"></script>
+</body>
+</html>

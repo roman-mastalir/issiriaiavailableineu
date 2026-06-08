@@ -1,0 +1,14 @@
+# Cloudflare Pages headers
+# HTML: always revalidate so a verdict flip goes live immediately.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Static assets are versioned via query string (?v=1) — cache hard.
+/og-image.png
+  Cache-Control: public, max-age=31536000, immutable
+/favicon.svg
+  Cache-Control: public, max-age=604800
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
