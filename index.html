@@ -315,15 +315,10 @@
     })();
   </script>
 
-  <!-- Cloudflare Web Analytics: free, cookieless, no consent banner.
-       Two ways to switch it on:
-       (A) Easiest, zero code — in your Cloudflare Pages project open the project, then
-           Metrics → Web Analytics → "Enable". Cloudflare auto-injects the beacon for you.
-           If you use this path, DELETE the <script> line below so it isn't counted twice.
-       (B) Manual — Cloudflare dashboard → Analytics & Logs → Web Analytics → add a site →
-           copy the token from the snippet it shows you, and paste it below in place of the
-           placeholder. -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "REPLACE_WITH_YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN"}'></script>
+  <!-- Analytics: Cloudflare Web Analytics is enabled on the Pages project
+       (Automatic setup), so Cloudflare injects the beacon at the edge on every
+       response — no script belongs here. Do NOT add a manual beacon too: a
+       second tag fights the injected one over which token to report to.
+       View stats in the dashboard under Analytics & Logs → Web Analytics. -->
 </body>
 </html>

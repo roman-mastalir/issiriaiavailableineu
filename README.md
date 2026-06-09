@@ -46,12 +46,11 @@ Flip `answer` to `"Yes"` and the colour (red → green), footnote, source link, 
 
 ## Analytics
 
-[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) — free, cookieless, no consent banner needed (so the "collects no personal data" line stays true). Two ways to turn it on:
+[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) — free, cookieless, no consent banner needed (so the "collects no personal data" line stays true).
 
-- **Easiest (zero code):** in the Cloudflare Pages project → **Metrics → Web Analytics → Enable**. Cloudflare auto-injects the beacon. If you do this, delete the `beacon.min.js` `<script>` in `index.html` so visits aren't counted twice.
-- **Manual:** Cloudflare dashboard → **Analytics & Logs → Web Analytics → Add a site**, copy the token it gives you, and paste it into the `data-cf-beacon` token placeholder in `index.html`.
+It's enabled via **Automatic setup** on the Pages project, so Cloudflare injects the beacon at the edge — there is intentionally **no beacon `<script>` in `index.html`**. Do not add a manual one: a second beacon competes with the injected one over which token to report to, and tracking silently breaks.
 
-View the numbers anytime under Web Analytics in the Cloudflare dashboard.
+View the numbers under **Analytics & Logs → Web Analytics** in the Cloudflare dashboard. The report tied to the automatic setup is the live one; any leftover "JS Snippet installation" site can be deleted.
 
 ## Regenerating the OG image / icons
 
